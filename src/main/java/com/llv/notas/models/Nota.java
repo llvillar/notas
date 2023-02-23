@@ -1,10 +1,14 @@
 package com.llv.notas.models;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 public class Nota {
@@ -18,6 +22,10 @@ public class Nota {
 
     @Column(nullable = false, length = 1000)
     private String descripcion;
+
+    @Column(nullable = true)
+    @JsonFormat(pattern = "dd/MM/yyyy")
+    private Date fecha;
 
     public Nota() {
     }
@@ -70,6 +78,14 @@ public class Nota {
         if (codigo != other.codigo)
             return false;
         return true;
+    }
+
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
     }
 
 }

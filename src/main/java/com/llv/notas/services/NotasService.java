@@ -1,5 +1,6 @@
 package com.llv.notas.services;
 
+import java.util.Date;
 import java.util.List;
 
 import com.llv.notas.models.Nota;
@@ -8,7 +9,7 @@ public interface NotasService {
 
     public List<Nota> findAll();
 
-    public List<Nota> findByTitulo(String titulo);
+    public List<Nota> findCriteria(String titulo, Date fecha);
 
     public Nota findById(int codigo);
 

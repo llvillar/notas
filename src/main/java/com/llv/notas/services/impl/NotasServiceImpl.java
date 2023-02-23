@@ -1,5 +1,6 @@
 package com.llv.notas.services.impl;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -22,8 +23,8 @@ public class NotasServiceImpl implements NotasService {
     }
 
     @Override
-    public List<Nota> findByTitulo(String titulo) {
-        return repository.findByTituloContainingIgnoreCase(titulo);
+    public List<Nota> findCriteria(String titulo, Date fecha) {
+        return repository.findByTituloContainingIgnoreCaseAndFechaGreaterThanEqual(titulo, fecha);
     }
 
     @Override

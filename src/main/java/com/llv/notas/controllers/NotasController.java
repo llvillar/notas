@@ -1,8 +1,10 @@
 package com.llv.notas.controllers;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,8 +29,9 @@ public class NotasController {
     }
 
     @GetMapping("/notas/criteria")
-    List<Nota> CriteriaTitulo(@RequestParam String titulo){
-        return service.findByTitulo(titulo);
+    List<Nota> criteria(@RequestParam String titulo, 
+            @RequestParam @DateTimeFormat(pattern="dd/MM/yyyy") Date fechaDesde){
+        return service.findCriteria(titulo, fechaDesde);
     }
 
     @GetMapping("/notas/{id}")
