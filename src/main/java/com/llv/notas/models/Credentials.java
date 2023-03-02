@@ -1,11 +1,11 @@
 package com.llv.notas.models;
 
-public class LogingDTO {
+public class Credentials {
     
     private String username;
     private String password;
     
-    public LogingDTO() {
+    public Credentials() {
     }
     public String getUsername() {
         return username;
