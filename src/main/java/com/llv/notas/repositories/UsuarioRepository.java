@@ -1,12 +1,12 @@
-package com.llv.notas.repositories;
+// package com.llv.notas.repositories;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+// import org.springframework.data.jpa.repository.JpaRepository;
+// import org.springframework.stereotype.Repository;
 
-import com.llv.notas.models.Usuario;
+// import com.llv.notas.models.Usuario;
 
 
-@Repository
-public interface UsuarioRepository extends JpaRepository<Usuario, String>{
-    Usuario findByName(String name);
-}
+// @Repository
+// public interface UsuarioRepository extends JpaRepository<Usuario, String>{
+//     Usuario findByName(String name);
+// }
